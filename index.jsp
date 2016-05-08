@@ -13,10 +13,10 @@
 	<%
 		Main m = new Main();
 		//定义即将访问的链接
-		String url = "http://www.baidu.com";
-		String result = m.getResult(url);
-		String patternStr = "src=\"(.+?)\"";
-		result = m.regexString(result, patternStr);
+		String url = "http://www.zhihu.com/explore/recommendations";
+		String patternStr = "question_link.+?>(.+?)<";
+		String result = m.getResult(url, patternStr);
+		//输出的是(.+?)\代替的内容
 		out.print(result);
 	%>
 </body>
